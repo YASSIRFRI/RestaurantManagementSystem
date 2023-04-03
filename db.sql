@@ -1,12 +1,9 @@
-
-
-
-
--- Create the user table
+DROP DATABASE IF EXISTS restaurantProject;
+CREATE Database restaurantProject;
+use restaurantProject;
 CREATE TABLE users (
   email VARCHAR(255) PRIMARY KEY,
   password VARCHAR(255)NOT NULL,
-  name VARCHAR(255),
   role ENUM('admin', 'customer') DEFAULT 'customer'
 );
 
@@ -17,11 +14,6 @@ CREATE TABLE meals (
   description TEXT,
   price float 
 );
-
-
----WAAAAAAA
-
--- Create the order table
 CREATE TABLE orders (
   id INT PRIMARY KEY AUTO_INCREMENT,
   user_email VARCHAR(255),
