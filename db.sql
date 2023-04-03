@@ -12,10 +12,10 @@ CREATE TABLE users (
 
 -- Create the meal table
 CREATE TABLE meals (
-  id INT PRIMARY KEY AUTO_INCREMENT,
+  meal_id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255),
   description TEXT,
-  price DECIMAL(10,2)
+  price float 
 );
 
 
