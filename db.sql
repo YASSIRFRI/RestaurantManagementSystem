@@ -26,5 +26,11 @@ CREATE TABLE orders (
   status ENUM('pending', 'processing', 'delivering', 'delivered') DEFAULT 'pending',
   delivery_date DATE,
   FOREIGN KEY (user_email) REFERENCES users(email),
+);
+CREATE TABLE Order_meals (
+  order_id INT,
+  meal_id INT,
+  PRIMARY KEY (order_id, meal_id),
+  FOREIGN KEY (order_id) REFERENCES orders(id),
   FOREIGN KEY (meal_id) REFERENCES meals(id)
 );
