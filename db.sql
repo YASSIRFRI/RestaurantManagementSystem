@@ -18,6 +18,9 @@ CREATE TABLE meals (
   price DECIMAL(10,2)
 );
 
+
+---WAAAAAAA
+
 -- Create the order table
 CREATE TABLE orders (
   id INT PRIMARY KEY AUTO_INCREMENT,
