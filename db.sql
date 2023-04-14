@@ -6,13 +6,11 @@ CREATE TABLE users (
   password VARCHAR(255)NOT NULL,
   role ENUM('admin', 'customer') DEFAULT 'customer'
 );
-
--- Create the meal table
 CREATE TABLE meals (
   meal_id INT PRIMARY KEY AUTO_INCREMENT,
   name VARCHAR(255),
   description TEXT,
-  price float 
+  price float NOT NULL, 
 );
 CREATE TABLE orders (
   id INT PRIMARY KEY AUTO_INCREMENT,
@@ -29,3 +27,5 @@ CREATE TABLE Order_meals (
   FOREIGN KEY (order_id) REFERENCES orders(id),
   FOREIGN KEY (meal_id) REFERENCES meals(id)
 );
+
+ALTER TABLE `orders` ADD `total_price` DECIMAL(5) NOT NULL DEFAULT '0' AFTER `status`;
